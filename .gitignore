@@ -1,0 +1,12 @@
+.DS_Store
+*.mp4
+*.aux
+*.log
+*.out
+*.pdf
+*.nb
+*.gif
+*.*~
+prog/regular.txt
+prog/triangle.txt
+*.eps
