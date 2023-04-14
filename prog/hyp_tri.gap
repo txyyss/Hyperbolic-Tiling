@@ -15,6 +15,9 @@ lookupMulTable := function(table, word, len)
     result := 1;
     for i in [1..len] do
         result := table[result][word[i]];
+        if result = 0 then
+            break;
+        fi;
     od;
     return result;
 end;
