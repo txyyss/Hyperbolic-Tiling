@@ -6,6 +6,8 @@
 *.pdf
 *.nb
 *.gif
+*.bbl
+*.blg
 *.*~
 prog/regular.txt
 prog/triangle.txt
