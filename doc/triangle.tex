@@ -42,7 +42,7 @@ graphics is the combination of geometry, group theory and
 deterministic finite automata. Nothing here is new. I just want to
 elucidate the elegance of mathematics hidden beneath this stunning
 figure.
- 
+
 \section{Hyperbolic Geometry}
 \begin{figure}[htbp]
   \centering
@@ -124,7 +124,6 @@ slower and slower while getting smaller and smaller. For this man, the
 $\mathbb{D}$ is the whole infinite world! In contrast, the hyperbolic
 angles in $\mathbb{D}$ are just Euclidean angles.
 
-
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[scale=4, thick, >=Stealth]
@@ -188,24 +187,186 @@ hyperbolic plane $\mathbb{D}$.
 
 \section{M\"obius Triangle and Triangle Group}
 
-The triangle that can be used to tile the entire hyperbolic plane
-$\mathbb{D}$ through reflections in its edges without any gaps or
-overlaps is called M\"obius triangle. A M\"obius triangle can be
-represented by a triple of positive integers $(p, q, r)$ which
-satisfies the following condition:
+The triangle that can be used to tile the entire Euclidean plane,
+hyperbolic plane or sphere through reflections in its sides without
+any gaps or overlaps is called M\"obius triangle. A M\"obius triangle
+can be represented by a triple of positive integers $(p, q, r)$ which
+means the vertex angles are $\pi/p$, $\pi/q$, and $\pi/r$
+repectively. Figure~\ref{fig:tri236} shows a $(2, 3, 6)$ triangle
+$ABC$ and the tiled pattern via reflections. The forward and backward
+letter ``F''s indicate the different orientations of the triangles,
+just like the black and white triangles of the cover figure. From the
+pattern, we can see that there are 4, 6, 12 triangles surrounding
+vertices $A$, $B$, $C$ respectively. In general, there are $2p$, $2q$,
+$2r$ surrounding triangles of each vertex of a M\"obius triangle $(p,
+q, r)$ since a complete angle is $2\pi$. Based on this principle, it
+can be determined that the M\"obius triangle of the cover figure is
+$(5, 5, 2)$.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[scale=1.5, thick, >=Stealth]
+    \draw (-3, -1.7320508) rectangle (3, 1.7320508);
+    \draw (-3, 0) -- (3, 0);
+    \draw (0, -1.7320508) -- (0, 1.7320508);
+    \draw (-3, -1.7320508) -- (3, 1.7320508);
+    \draw (3, -1.7320508) -- (-3, 1.7320508);
+    \draw (-3, -1.7320508) -- (-1, 1.7320508) -- (1, -1.7320508) -- (3, 1.7320508);
+    \draw (-3, 1.7320508) -- (-1, -1.7320508) -- (1, 1.7320508) -- (3, -1.7320508);
+    \draw (0.1, -1.6320508) -- (0.1, -1.2320508) -- (0.3, -1.2320508);
+    \draw (0.1, -1.4320508) -- (0.25, -1.4320508);
+    \draw (1.3633975, -0.90262794) -- (1.0169873, -0.70262794) -- (0.9169873, -0.87583302);
+    \draw (1.1901924, -0.80262794) -- (1.1151924, -0.93253175);
+    \draw (1.5366025, -1.0026279) -- (1.8830127, -1.2026279) -- (1.7830127, -1.3758330);
+    \draw (1.7098076, -1.1026279) -- (1.6348076, -1.2325318);
+    \draw (1.6366025, -0.8294229) -- (1.9830127, -1.0294229) -- (2.0830127, -0.8562178);
+    \draw (1.8098076, -0.9294229) -- (1.8848076, -0.7995191);
+    \draw (1.4633975, -0.7294229) -- (1.1169873, -0.5294229) -- (1.2169873, -0.3562178);
+    \draw (1.2901924, -0.6294229) -- (1.3651924, -0.4995190);
+    \draw (2.9, -0.1) -- (2.9, -0.5) -- (2.7, -0.5);
+    \draw (2.9, -0.3) -- (2.750000, -0.3);
+    \draw (0.1, 1.6320508) -- (0.1, 1.2320508) -- (0.3, 1.2320508);
+    \draw (0.1, 1.4320508) -- (0.25, 1.4320508);
+    \draw (1.3633975, 0.90262794) -- (1.0169873, 0.70262794) -- (0.9169873, 0.87583302);
+    \draw (1.1901924, 0.80262794) -- (1.1151924, 0.93253175);
+    \draw (1.5366025, 1.0026279) -- (1.8830127, 1.2026279) -- (1.7830127, 1.3758330);
+    \draw (1.7098076, 1.1026279) -- (1.6348076, 1.2325318);
+    \draw (1.6366025, 0.8294229) -- (1.9830127, 1.0294229) -- (2.0830127, 0.8562178);
+    \draw (1.8098076, 0.9294229) -- (1.8848076, 0.7995191);
+    \draw (1.4633975, 0.7294229) -- (1.1169873, 0.5294229) -- (1.2169873, 0.3562178);
+    \draw (1.2901924, 0.6294229) -- (1.3651924, 0.4995190);
+    \draw (2.9, 0.1) -- (2.9, 0.5) -- (2.7, 0.5);
+    \draw (2.9, 0.3) -- (2.750000, 0.3);
+    \draw (-0.1, -1.6320508) -- (-0.1, -1.2320508) -- (-0.3, -1.2320508);
+    \draw (-0.1, -1.4320508) -- (-0.25, -1.4320508);
+    \draw (-1.3633975, -0.90262794) -- (-1.0169873, -0.70262794) -- (-0.9169873, -0.87583302);
+    \draw (-1.1901924, -0.80262794) -- (-1.1151924, -0.93253175);
+    \draw (-1.5366025, -1.0026279) -- (-1.8830127, -1.2026279) -- (-1.7830127, -1.3758330);
+    \draw (-1.7098076, -1.1026279) -- (-1.6348076, -1.2325318);
+    \draw (-1.6366025, -0.8294229) -- (-1.9830127, -1.0294229) -- (-2.0830127, -0.8562178);
+    \draw (-1.8098076, -0.9294229) -- (-1.8848076, -0.7995191);
+    \draw (-1.4633975, -0.7294229) -- (-1.1169873, -0.5294229) -- (-1.2169873, -0.3562178);
+    \draw (-1.2901924, -0.6294229) -- (-1.3651924, -0.4995190);
+    \draw (-2.9, -0.1) -- (-2.9, -0.5) -- (-2.7, -0.5);
+    \draw (-2.9, -0.3) -- (-2.750000, -0.3);
+    \draw (-0.1, 1.6320508) -- (-0.1, 1.2320508) -- (-0.3, 1.2320508);
+    \draw (-0.1, 1.4320508) -- (-0.25, 1.4320508);
+    \draw (-1.3633975, 0.90262794) -- (-1.0169873, 0.70262794) -- (-0.9169873, 0.87583302);
+    \draw (-1.1901924, 0.80262794) -- (-1.1151924, 0.93253175);
+    \draw (-1.5366025, 1.0026279) -- (-1.8830127, 1.2026279) -- (-1.7830127, 1.3758330);
+    \draw (-1.7098076, 1.1026279) -- (-1.6348076, 1.2325318);
+    \draw (-1.6366025, 0.8294229) -- (-1.9830127, 1.0294229) -- (-2.0830127, 0.8562178);
+    \draw (-1.8098076, 0.9294229) -- (-1.8848076, 0.7995191);
+    \draw (-1.4633975, 0.7294229) -- (-1.1169873, 0.5294229) -- (-1.2169873, 0.3562178);
+    \draw (-1.2901924, 0.6294229) -- (-1.3651924, 0.4995190);
+    \draw (-2.9, 0.1) -- (-2.9, 0.5) -- (-2.7, 0.5);
+    \draw (-2.9, 0.3) -- (-2.750000, 0.3);
+    \draw (4, -0.8660254) -- (5, -0.8660254) -- (4, 0.8660254) -- cycle;
+    \draw (4.1, -0.7660254) -- (4.1, -0.3660254) -- (4.3, -0.3660254);
+    \draw (4.1, -0.5660254) -- (4.25, -0.5660254);
+    \draw[<->] (4.5, -0.5660254) -- (4.5, -1.1660254);
+    \draw[<->] (3.7, 0) -- (4.3, 0);
+    \draw[<->] (4.2401924, -0.15) -- (4.7598076, 0.15);
+    \draw (4, -0.8660254) node [anchor=east] {$A$};
+    \draw (5, -0.8660254) node [anchor=west] {$B$};
+    \draw (4, 0.8660254) node [anchor=south] {$C$};
+    \draw (4.5, -1.1660254) node [anchor=north] {$c$};
+    \draw (3.7, 0) node [anchor=east] {$b$};
+    \draw (4.7598076, 0.15) node [anchor=west] {$a$};
+  \end{tikzpicture}
+  \caption{The $(2, 3, 6)$ Triangle Tiling}
+  \label{fig:tri236}
+\end{figure}
+
+A simple condition can be used to determine in which geometry a
+M\"obius triangle can tile. If $1/p + 1/q + 1/r = 1$, the triangle can
+tile the Euclidean plane. If the sum of reciprocals is greater than 1,
+the triangle can tile a sphere. A hyperbolic M\"obius triangle must
+satisfy the following condition:
 \begin{equation}\label{eqn:mobtri}
   \frac{1}{p} + \frac{1}{q} + \frac{1}{r} < 1
 \end{equation}
-The triple $(p, q, r)$ means the vertex angles of a M\"obius triangle
-are $\pi/p$, $\pi/q$, and $\pi/r$ repectively. The
-equation~\eqref{eqn:mobtri} just reveals the fact that the sum of the
-angles of any hyperbolic triangle is strictly less than a straight
-angle. The M\"obius triangle of the cover figure is $(5, 5, 2)$. The
-triple can be determined by the number of surrounding triangles of
-each vertex, which is 10, 10, and 4 respectively in this case.
+The inequation~\eqref{eqn:mobtri} is a straightforward consequence of
+the fact that the sum of the angles of any hyperbolic triangle is
+strictly less than a straight angle.
 
-The cover figure can be seen as the geometric realization of a certain
-kind of hyperbolic reflection group: triangle group.
+The pattern in Figure~\ref{fig:tri236} can also be seen as a parital
+geometric realization of a \emph{triangle group} whose elements are
+compositions of reflections $a$, $b$ and $c$ in the three sides of
+triangle $ABC$. Given any M\"obius triangle $(p, q, r)$, the group
+generated by reflections across its sides is called $(p, q, r)$
+triangle group. The number of elements of a triangle group equals the
+number of copies of the original triangle in the whole pattern,
+because there is a unique isometry in the group taking the original
+triangle to any other triangle. An isometry is a distance-preserving
+bijective transformation between metric spaces. All reflections in
+various geometries are isometries, so as their compositions.
+
+A triangle group has a presentation in terms of its generators and
+relations. The three generator $a$, $b$ and $c$ have order 2 since
+they are reflections. The composition of two reflections in lines
+meeting at an angle $\alpha$ is a rotation by $2\alpha$ about the
+intersection of the two lines. Thus $ab$, $bc$, and $ca$ are rotations
+by $2\pi/p$, $2\pi/q$, and $2\pi/r$ and hence have order $p$, $q$ and
+$r$. So the following relations hold:
+\begin{equation*}
+  a^2 = b^2 = c^2 = 1,\, (ab)^p = (bc)^q = (ca)^r = 1
+\end{equation*}
+There is a theorem saying that all other relations between $a$, $b$
+and $c$ can be expressed in terms of relations above. So the triangle
+group admits a group presentation
+\begin{equation}\label{eqn:prtn}
+  \langle a, b, c \mid a^2 = b^2 = c^2 = (ab)^p = (bc)^q = (ca)^r = 1\rangle
+\end{equation}
+Informally, a group presentation $\langle S \mid R \rangle$ with
+generator sets $S$ and relation sets $R$ like \eqref{eqn:prtn}
+specifies a group whose element has the form
+\begin{equation*}
+  s_1^{a_1}s_2^{a_2}\dots s_n^{a_n}
+\end{equation*}
+where $s_i\in S$ and $a_i$ are non-zero integers. Particularly, $a_i$
+is positive in the group presented by \eqref{eqn:prtn}, since
+$s_i^2=1$ indicates $s_i^{-1}=s_i$. Such a form is called a
+\emph{word} of the group. An element may have many equivalent words if
+$R$ is not empty. For example, $ab^3c=abc$ since $b^2=1$ in
+\eqref{eqn:prtn}. If $S$ is finite, the group is \emph{finitely
+generated}. If both $S$ and $R$ are finite sets, we say that the group
+is \emph{finitely presented}.
+
+A natural question is: for a particular group $\langle S \mid R
+\rangle$, is there an algorithm to decide whether two words are the
+same element or not? It is called the \emph{word problem} for
+groups. In general, it is undecidable
+\citep{novikov1958algorithmic}. However, the word problem for triangle
+groups is solvable. This is the reason why we can generate the
+hyperbolic triangle tilings efficiently.
+
+\section{Automatic Groups and Automata}
+The word problem for triangle groups involves the theory of
+\emph{automatic groups}, developed by David Epstein, Jim Cannon, Bill
+Thurston and others \citep{epstein1992}. An automatic group is a
+finitely generated group equipped with several finite-state
+automata. Those automata can be used to tell if a given word is some
+sort of ``canonical form'' and tell if two canonical words differ by a
+generator.
+
+All triangle groups are automatic groups, which means we can generate
+triangle tilings by enumerating the elements of the group that map the
+initial triangle somewhere via the equipped automata. Furthermore, the
+triangle group is \emph{short-lex automatic}. It means the
+``canonical-formed'' words that can be enumerated are the minimal
+words in short-lex order. Among all words representing the same group
+element, the minimal word in short-lex order is the word with minimal
+length and the firt one in lexicographical order.
+
+The practical algorithm to find the automatic structure of a triangle
+group is described in \citep{epstein1991}, whose major component is
+Knuth--Bendix completion algorithm. The good news is that we do not
+need to implement this complicated algorithm. There is a
+GAP\citep{GAP4} package called \verb|kbmag| (Knuth-Bendix on Monoids
+and Automatic Groups) that can help us to enumerate words and
+transforming an arbitrary word to its normal (i.e.\ minimal in
+short-lex order) form.
 
 \bibliographystyle{abbrv}
 \bibliography{triangle}
